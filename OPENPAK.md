@@ -1,6 +1,13 @@
-# Dolphin for OpenPak
+# Marina for OpenPak
 
-Fork of upstream Dolphin with three additions: a way to point the emulated console at OpenPak,
+Marina is OpenPak's firmware-first Wii emulator, forked from Dolphin via
+`openpak/dolphin` at tag `v0.2.4` (see [README.md](README.md)). The
+firmware-first direction — booting the console's own System Menu, IOS and
+BC/MIOS from the owner's NAND dump — is planned in
+`docs/wii/marina-base-plan.md` in the OpenPak docs repo; what follows is the
+OpenPak integration this fork point already carries.
+
+Three additions over upstream Dolphin: a way to point the emulated console at OpenPak,
 cloud saves driven by the emulator, and the OpenPak menu and window every OpenPak emulator
 shares (`emulators/prds/openpak-ux-spec.md`, Wii family). Everything else is upstream, merged as it moves.
 Builds: `vX.Y.Z` tags (`v*.*.*`) publish a GitHub Release (`.github/workflows/openpak_release.yml`).
