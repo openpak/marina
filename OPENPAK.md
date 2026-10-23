@@ -4,7 +4,7 @@ Marina is OpenPak's firmware-first Wii emulator, forked from Dolphin via
 `openpak/dolphin` at tag `v0.2.4` (see [README.md](README.md)). The
 firmware-first direction — booting the console's own System Menu, IOS and
 BC/MIOS from the owner's NAND dump — is planned in
-`docs/wii/marina-base-plan.md` in the OpenPak docs repo; what follows is the
+the internal research notes; what follows is the
 OpenPak integration this fork point already carries.
 
 Three additions over upstream Dolphin: a way to point the emulated console at OpenPak,
