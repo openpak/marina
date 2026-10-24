@@ -46,7 +46,7 @@ emulator. The account only names you and authorises cloud saves; WFC itself
 has no accounts. Tick the WFC checkbox in Config > Wii to redirect the
 console's names to OpenPak. Games that need a patch to use plain HTTP for
 their login also need OpenPak's stage-0 Gecko code, published with the
-nn-wfc-patcher-wii project in the OpenPak organisation.
+wii-patcher project in the OpenPak organisation.
 
 You must supply your own Wii NAND dump (made with BootMii on your own
 console, with its keys) and your own games. Import the dump with Tools >

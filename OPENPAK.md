@@ -19,7 +19,7 @@ A **Connect Nintendo WFC to OpenPak** checkbox in Config → Wii, mirrored in Se
 (same key, `Core/EnableOpenPak`). With it on, IOS resolves every
 name on the applied redirect list to the OpenPak server (`Core/OpenPakServer` in Dolphin.ini),
 instead of asking the host resolver. Apply the game's OpenPak stage-0 Gecko code from
-`nn-wfc-patcher-wii` too; that is what switches the disc's NAS login to plain HTTP the way
+`wii-patcher` too; that is what switches the disc's NAS login to plain HTTP the way
 WiiLink's patcher does.
 
 The redirect list and the address are **not compiled in any more** (EP-2,
