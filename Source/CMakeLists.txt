@@ -19,6 +19,19 @@ if (NOT MSVC)
   set(CMAKE_CXX_STANDARD 23)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
   set(CMAKE_CXX_EXTENSIONS OFF)
+
+  # std::jthread is guarded behind -fexperimental-library prior to libc++ version 20
+  check_cxx_source_compiles([[
+  #include <version>
+  #if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 200000
+  #error libc++ version < 20
+  #endif
+  int main() {}
+  ]] IS_JTHREAD_STABLE)
+
+  if(NOT IS_JTHREAD_STABLE)
+    add_compile_options(-fexperimental-library)
+  endif()
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -78,6 +91,11 @@ add_definitions(-D__STDC_CONSTANT_MACROS)
 check_symbol_exists(elf_aux_info sys/auxv.h HAVE_ELF_AUX_INFO)
 if(HAVE_ELF_AUX_INFO)
   add_definitions(-DHAVE_ELF_AUX_INFO)
+endif()
+
+check_symbol_exists(getexecpath unistd.h HAVE_GETEXECPATH)
+if(HAVE_GETEXECPATH)
+  add_definitions(-DHAVE_GETEXECPATH)
 endif()
 
 add_subdirectory(Core)

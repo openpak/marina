@@ -527,6 +527,7 @@ class EmulationActivity : AppCompatActivity(), ThemeProvider {
             MENU_ACTION_SKYLANDERS -> showSkylanderPortalSettings()
             MENU_ACTION_INFINITY_BASE -> showInfinityBaseSettings()
             MENU_ACTION_EXIT -> emulationFragment!!.stopEmulation()
+            MENU_ACTION_RESET -> emulationFragment!!.resetEmulation()
         }
     }
 
@@ -1087,6 +1088,7 @@ class EmulationActivity : AppCompatActivity(), ThemeProvider {
         const val MENU_ACTION_INFINITY_BASE = 37
         const val MENU_ACTION_LATCHING_CONTROLS = 38
         const val MENU_ACTION_OPENPAK = 39
+        const val MENU_ACTION_RESET = 40
 
         init {
             buttonsActionsMap.apply {

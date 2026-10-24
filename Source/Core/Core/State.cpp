@@ -5,7 +5,6 @@
 
 #include <algorithm>
 #include <filesystem>
-#include <locale>
 #include <map>
 #include <mutex>
 #include <shared_mutex>
@@ -26,6 +25,7 @@
 #include "Common/Contains.h"
 #include "Common/FileUtil.h"
 #include "Common/IOFile.h"
+#include "Common/LocaleUtil.h"
 #include "Common/Logging/Log.h"
 #include "Common/MsgHandler.h"
 #include "Common/StringUtil.h"
@@ -300,7 +300,8 @@ static std::string SystemTimeAsDoubleToString(double time)
     return "";
 
   // fmt is locale agnostic by default, so explicitly use current locale.
-  return fmt::format(std::locale{""}, "{:%x %X}", *local_time);
+  // Using L for locale-dependent formatting.
+  return fmt::format(Common::GetEnvironmentLocale(), "{:L%x %X}", *local_time);
 }
 
 static std::string MakeStateFilename(u32 number)
